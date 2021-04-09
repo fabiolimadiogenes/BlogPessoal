@@ -32,8 +32,8 @@ public class BasicSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception{
 		http.authorizeRequests()
-		.antMatchers("/usuario/logar").permitAll() //não precisa de autenticação
-		.antMatchers("/usuario/cadastrar").permitAll() //não precisa de autenticação
+		.antMatchers("/usuarios/logar").permitAll() //não precisa de autenticação
+		.antMatchers("/usuarios/cadastrar").permitAll() //não precisa de autenticação
 		.anyRequest().authenticated() //todo resto deve ser autenticado
 		.and().httpBasic() //usar padrão basic para gerar a chave token
 		.and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS) //indicar qual o tipo de sessão que iremos utilizar e sua politica. STATELESS não guarda sessão nenhuma
